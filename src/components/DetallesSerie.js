@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Global from './Global';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 export default class DetallesSerie extends Component {
 	state = {
@@ -71,7 +72,8 @@ export default class DetallesSerie extends Component {
 						</tr>
 					</tbody>
 				</table>
-				<button onClick={this.mostrarPersonajes} className='btn btn-primary'>Mostrar Personajes</button>
+				<NavLink to={"/personajes/"+this.state.serie.idSerie}>Mostrar Personajes</NavLink>
+				{/* <button onClick={this.mostrarPersonajes} className='btn btn-primary'>Mostrar Personajes</button> */}
 				{this.state.status == true &&
 					(<table className='table'>
 						<thead className='thead-dark'>
